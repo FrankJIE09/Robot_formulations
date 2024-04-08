@@ -1,3 +1,5 @@
+# Author: Frank & Chatgpt
+# Edit Date: 2024-04-08
 import sympy as sp
 
 # 定义符号变量
@@ -6,6 +8,10 @@ a1, a2, a3, a4, a5 = sp.symbols('a1 a2 a3 a4 a5')
 d1, d2, d3, d4, d5 = sp.symbols('d1 d2 d3 d4 d5')
 alpha0, alpha1, alpha2, alpha3, alpha4 = sp.symbols('alpha0 alpha1 alpha2 alpha3 alpha4')
 phi, theta, s = sp.symbols('phi theta s')
+# Author: ChatGPT
+# Edit Date: 2024-04-08
+# Code Purpose: Computing transformation matrices for a continuous flexible body using DH parameters
+# 代码用途: 通过DH参数计算连续柔性体的转换矩阵
 
 # 定义DH参数
 DH_parameters = [
@@ -39,7 +45,7 @@ T = sp.simplify(T)
 T_inv = sp.simplify(T.inv())
 T_diff_theta = T.diff(theta)
 T_diff_phi = T.diff(phi)
-Jcb_theta = sp.simplify(T_diff_theta @ T_inv).subs(theta/2, sp.Symbol('theta'))
+Jcb_theta = sp.simplify(T_diff_theta @ T_inv).subs(theta / 2, sp.Symbol('theta'))
 Jcb_phi = sp.simplify(T_diff_theta @ T_inv)
 
 print("末端到基坐标的转换公式:")

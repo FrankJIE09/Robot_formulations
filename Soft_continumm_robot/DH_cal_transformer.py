@@ -1,3 +1,8 @@
+# Author: Frank & Chatgpt
+# Edit Date: 2024-04-08
+# Code Purpose: Computing transformation matrices for a continuous flexible body using DH parameters
+# 代码用途: 通过DH参数计算连续柔性体的转换矩阵
+
 import sympy as sp
 
 # 定义符号变量
@@ -17,7 +22,6 @@ DH_parameters = [
     {sp.Symbol('alpha'): 0, sp.Symbol('a'): 0, sp.Symbol('d'): 0, sp.Symbol('theta'): -phi}
 ]
 
-
 # 定义单位变换矩阵
 def DH_transform(alpha, a, d, theta):
     return sp.Matrix([
@@ -27,13 +31,11 @@ def DH_transform(alpha, a, d, theta):
         [0, 0, 0, 1]
     ])
 
-
 # 计算总的变换矩阵
 T = sp.eye(4)
 for params in DH_parameters:
     T = T * DH_transform(params[sp.Symbol('alpha')], params[sp.Symbol('a')], params[sp.Symbol('d')],
                          params[sp.Symbol('theta')])
-
 
 T = sp.simplify(T)
 T_inv = sp.simplify(T.inv())

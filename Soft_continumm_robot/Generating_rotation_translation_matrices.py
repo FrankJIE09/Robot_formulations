@@ -1,6 +1,8 @@
+# Author: Frank & Chatgpt
+# Edit Date: 2024-04-08
+# Code Purpose: Functions for generating rotation and translation matrices in SE(3) space, and calculating affine transformation matrices
 import numpy as np
 import sympy as sp
-from scipy.spatial.transform import Rotation
 def rot_SE3(axis, angle):
     """
     生成绕指定轴的旋转矩阵的SE(3)形式

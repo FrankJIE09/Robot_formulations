@@ -1,15 +1,20 @@
+# Author: Frank
+# Edit Date: 2024-04-08
+# Code Purpose: Hat mapping functions for so(3) and se(3)
+
 import numpy as np
 
 def hat_map_so3(v):
     """
-    将三维向量 v 映射到 so(3) 的 hat 映射结果
+    Maps a 3-dimensional vector v to the hat mapping result of so(3).
     """
     return np.array([[0, -v[2], v[1]],
                      [v[2], 0, -v[0]],
                      [-v[1], v[0], 0]])
+
 def hat_map_se3(xi):
     """
-    将六维向量 xi 映射到 se(3) 的 hat 映射结果
+    Maps a 6-dimensional vector xi to the hat mapping result of se(3).
     """
     v = xi[:3]
     w = xi[3:]
@@ -17,19 +22,19 @@ def hat_map_se3(xi):
         [hat_map_so3(w), v[:, np.newaxis]],
         [np.zeros(3), 0]
     ])
-# 示例向量
+
+# Example vector
 v = np.array([1, 2, 3])
 
-# 计算 hat 映射结果
+# Compute the hat mapping result
 hat_v = hat_map_so3(v)
-print("hat 映射结果:")
+print("Hat Mapping Result:")
 print(hat_v)
 
-
-# 示例向量
+# Example vector
 xi = np.array([1, 2, 3, 0.1, 0.2, 0.3])
 
-# 计算 hat 映射结果
+# Compute the hat mapping result
 hat_xi = hat_map_se3(xi)
-print("hat 映射结果:")
+print("Hat Mapping Result:")
 print(hat_xi)

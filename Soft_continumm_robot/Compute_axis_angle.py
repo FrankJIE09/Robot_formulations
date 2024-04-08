@@ -1,3 +1,6 @@
+# Author: Frank & Chatgpt
+# Edit Date: 2024-04-08
+# Code Purpose: Compute axis-angle representation from a given rotation matrix
 import numpy as np
 from scipy.spatial.transform import Rotation
 
