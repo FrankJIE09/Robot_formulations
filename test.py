@@ -1,12 +1,15 @@
 import sympy as sp
 
-# 定义符号变量
-theta, phi = sp.symbols('theta phi')
+# Define symbols
+phi = sp.pi/2
+R = sp.Matrix([[sp.cos(phi), -sp.sin(phi)],
+               [sp.sin(phi), sp.cos(phi)]])
+P = sp.Matrix([sp.Symbol('P_x'), sp.Symbol('P_y')])
+P_dot = sp.Matrix([sp.Symbol('P_dot_x'), sp.Symbol('P_dot_y')])
 
-# 定义表达式
-expr = (-sp.sin(theta/2)**2*sp.cos(phi) + sp.cos(phi)*sp.cos(theta/2)**2)*sp.cos(phi) + sp.sin(phi)**2
+# Calculate dot_R_transpose_P
+dot_R_transpose_P = R.T * P_dot
 
-# 将表达式中的 theta/2 合并为 theta
-expr_simplified = sp.simplify(expr)
-print("合并后的表达式：")
-print(expr_simplified)
+# Print the result
+print("dot_R_transpose_P:")
+sp.pprint(dot_R_transpose_P)
