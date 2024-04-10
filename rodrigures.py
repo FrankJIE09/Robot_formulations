@@ -34,7 +34,23 @@ R = rodrigues_formula(v, theta)
 R1 = rodrigues_formula(np.array([0, 1, 0]), -np.pi / 2)
 R2 = rodrigues_formula(np.array([1, 0, 0]), np.pi / 2)
 R3 = rodrigues_formula(np.array([1, 0, 0]), -np.pi / 2)
+R4 = rodrigues_formula(np.array([1 / np.sqrt(5), 2 / np.sqrt(5), 0]), np.sqrt(5))
+Rx = rodrigues_formula(np.array([1, 0, 0]), np.radians(30))
+Ry = rodrigues_formula(np.array([0, 1, 0]), np.radians(180))
+Rz = rodrigues_formula(np.array([0, 0, 1]), np.radians(180))
+multi_solution = rodrigues_formula(np.array([1 / np.sqrt(2), 0, 1 / np.sqrt(2)]), np.radians(180))
+print(Rz @ Ry)
+'''
+
+Rs_b = Rx @ Ry @ Rz
+Rb_s = Rs_b.T
+ps = np.array([1, 2, 3])
+pb = Rb_s @ ps
+print("pb:\n", pb)
 print("Rsa: \n", R1 @ R2)
 print("Rsb: \n", R3)
+print("R4: \n", R4)
+
 print("旋转矩阵：")
 print(R)
+'''
