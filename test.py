@@ -1,15 +1,10 @@
-import sympy as sp
+import numpy as np
 
-# Define symbols
-phi = sp.pi/2
-R = sp.Matrix([[sp.cos(phi), -sp.sin(phi)],
-               [sp.sin(phi), sp.cos(phi)]])
-P = sp.Matrix([sp.Symbol('P_x'), sp.Symbol('P_y')])
-P_dot = sp.Matrix([sp.Symbol('P_dot_x'), sp.Symbol('P_dot_y')])
+# 设置打印选项
+np.set_printoptions(precision=4, suppress=True)
 
-# Calculate dot_R_transpose_P
-dot_R_transpose_P = R.T * P_dot
+# 示例数组
+arr = np.array([0.123456789, 0.000000123456789])
 
-# Print the result
-print("dot_R_transpose_P:")
-sp.pprint(dot_R_transpose_P)
+# 打印数组
+print(arr)
