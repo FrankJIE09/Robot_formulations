@@ -32,7 +32,7 @@ def compute_jacobian(axis_list, theta_list, ):
         # 更新T_prev
         T_prev = np.dot(T_prev, T)
 
-    return np.array(J_list[::-1]).T
+    return (np.array(J_list[::-1]).T).astype(float)
 
 
 if __name__ == '__main__':

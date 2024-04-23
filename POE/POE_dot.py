@@ -38,8 +38,8 @@ def POE(omega, v, theta):
     T = sp.eye(4)
     T[:3, :3] = R
     T[:3, -1] = P
-    print("指数积的转换矩阵：")
-    print(T)
+    # print("指数积的转换矩阵：")
+    # print(T)
     return T
 
 if __name__ == '__main__':

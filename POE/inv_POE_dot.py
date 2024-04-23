@@ -38,8 +38,8 @@ def inv_POE(omega, v, theta):
     T = np.eye(4)
     T[:3, :3] = R
     T[:3, -1] = P
-    print("指数积的转换矩阵：")
-    print(T)
+    # print("指数积的转换矩阵：")
+    # print(T)
     return T
 
 
@@ -61,8 +61,8 @@ def error_inv_POE(omega, v, theta):
     T = np.eye(4)
     T[:3, :3] = R
     T[:3, -1] = P
-    print("指数积的转换矩阵：")
-    print(T)
+    # print("指数积的转换矩阵：")
+    # print(T)
     return T
 
 
