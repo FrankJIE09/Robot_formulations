@@ -62,7 +62,6 @@ if __name__ == '__main__':
     v6 = [0, 0, 0]
     axis_list = [(omega1 + v1), (omega2 + v2), (omega3 + v3), (omega4 + v4), (omega5 + v5), (omega6 + v6)]
 
-    axis_list = axis_list[::-1]
     theta_list = [theta1, theta2, theta3, theta4, theta5, theta6]  # 角度列表
 
     J = compute_jacobian(axis_list, theta_list, )
