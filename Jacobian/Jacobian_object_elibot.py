@@ -38,7 +38,7 @@ def compute_jacobian(axis_list, theta_list, ):
 
 
 if __name__ == '__main__':
-    np.set_printoptions(precision=4, suppress=True)
+    np.set_printoptions(precision=3, suppress=True)
 
     # 示例调用
     # theta1, theta2, theta3, theta4, theta5, theta6 = sp.symbols('theta1 theta2 theta3 theta4 theta5 theta6')

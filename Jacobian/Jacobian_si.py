@@ -35,22 +35,21 @@ def compute_jacobian(axis_list, theta_list, ):
 
 
 if __name__ == '__main__':
-    np.set_printoptions(precision=4, suppress=True)
+    np.set_printoptions(precision=3,suppress=True)
 
     # 示例调用
     theta1, theta2, theta3, theta4, theta5, theta6 = sp.symbols('theta1 theta2 theta3 theta4 theta5 theta6')
-    L1, L2, L3, L4, L5, L6 = sp.symbols('L1 L2 L3 L4 L5 L6')
+    L1 = 100
+    theta1, theta2, theta3, theta4 =0,0,0,0
     axis_list = [[0, 0, 1, 0, 0, 0],
-                 [-1, 0, 0, 0, -L1, 0],
-                 [0, 0, 0, 0, 1, 0],
-                 [0, 0, 1, L2 + theta3, 0, 0],
-                 [-1, 0, 0, 0, -L1, L2 + theta3],  # 轴向列表
-                 [0, 1, 0, -L1, 0, 0]]  # 轴向列表
+                 [0, 1, 0, 0, 0, 0],
+                 [1, 0, 0, 0, 0, 0],
+                 [1, 0, 0, 0, 0, -L1], ]
 
-    theta_list = [theta1, theta2, theta3, theta4, theta5, theta6]  # 角度列表
+    theta_list = [theta1, theta2, theta3, theta4]  # 角度列表
 
     J = compute_jacobian(axis_list, theta_list, )
-    print()
+    print(J)
     print(J.T)
     exit()
     # 例题5.2
