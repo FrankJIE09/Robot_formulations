@@ -1,3 +1,5 @@
+import time
+
 import numpy as np
 import sympy as sp
 from POE.POE_dot import *
@@ -42,6 +44,7 @@ if __name__ == '__main__':
     # theta1, theta2, theta3, theta4, theta5, theta6 = sp.symbols('theta1 theta2 theta3 theta4 theta5 theta6')
     # L1, L2, L3, L4, L5, L6 = sp.symbols('L1 L2 L3 L4 L5 L6')
     # 课后题5.2.b
+    Btime = time.time()
     d1, d2, d3, d4, d5, d6, d7, d8 = 186.756, 184.549, 615.605, 126.951, 573.731, 116.549, 116.52, 102.156
     theta1, theta2, theta3, theta4, theta5, theta6 = np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2
     omega1 = [0, -1, 0]
@@ -57,13 +60,15 @@ if __name__ == '__main__':
     v4 = [-d7, 0, 0]
     v5 = [-d8, 0, 0]
     v6 = [0, 0, 0]
-    L1, L2, L3, L4, L5, L6 = 1, 1, 1, 1, 1, 1
-    axis_list = [(omega1+v1), (omega2+v2), (omega3+v3), (omega4+v4), (omega5+v5), (omega6+v6)]
+    axis_list = [(omega1 + v1), (omega2 + v2), (omega3 + v3), (omega4 + v4), (omega5 + v5), (omega6 + v6)]
 
     axis_list = axis_list[::-1]
-    theta_list = [theta1, theta2, theta3,  theta4, theta5, theta6]  # 角度列表
+    theta_list = [theta1, theta2, theta3, theta4, theta5, theta6]  # 角度列表
 
     J = compute_jacobian(axis_list, theta_list, )
+    Vd = [10, 10, 10, 0, 0, 0]
+    theta_dot = np.linalg.inv(J) @ Vd
     # 删除多余的零并打印矩阵
-    print("物体雅可比的转置为：")
-    print(J.T)
+    print(time.time() - Btime)
+    print("关节速度：")
+    print(theta_dot)
