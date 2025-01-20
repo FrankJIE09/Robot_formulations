@@ -8,7 +8,7 @@ from base_formulations.rodrigures import *
 
 
 def compute_jacobian(axis_list, theta_list, ):
-    # assert len(axis_list) == len(theta_list) "轴数、角度数和长度数必须相同"
+    assert len(axis_list) == len(theta_list) #"轴数、角度数和长度数必须相同"
     axis_list = axis_list[::-1]
     theta_list = theta_list[::-1]
     J_list = []

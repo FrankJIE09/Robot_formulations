@@ -45,8 +45,8 @@ def compute_jacobian(axis_list, theta_list):
     return np.array(J_list[::-1]).T.astype(float)
 
 
-def calculate_joint_velocity(Vd,theta1, theta2, theta3, theta4, theta5, theta6):
-    """
+def calculate_joint_velocity(Vd, theta):
+    """theta_list = eval(theta_str)  # 将字符串转换为列表
     计算关节速度。
     参数:
     Vd : list - 速度向量。
@@ -56,6 +56,7 @@ def calculate_joint_velocity(Vd,theta1, theta2, theta3, theta4, theta5, theta6):
     """
     np.set_printoptions(precision=4, suppress=True)
     # 常量定义
+    theta1, theta2, theta3, theta4, theta5, theta6 = theta
     d1, d2, d3, d4, d5, d6, d7, d8 = 186.756, 184.549, 615.605, 126.951, 573.731, 116.549, 116.52, 102.156
     theta = np.pi / 2  # 所有角度为90度
     omega1, omega2, omega3, omega4, omega5, omega6 = [0, -1, 0], [0, 0, -1], [0, 0, -1], [0, 0, -1], [0, -1, 0], [0, 0,
@@ -80,6 +81,6 @@ if __name__ == '__main__':
     Vd = [10, 10, 10, 0, 0, 0]
     theta1, theta2, theta3, theta4, theta5, theta6 = np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2
 
-    theta_dot = calculate_joint_velocity(Vd,theta1, theta2, theta3, theta4, theta5, theta6)
+    theta_dot = calculate_joint_velocity(Vd, [theta1, theta2, theta3, theta4, theta5, theta6])
     print("关节速度：")
     print(theta_dot)
