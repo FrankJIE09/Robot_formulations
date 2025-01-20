@@ -29,14 +29,15 @@ def calculate_joint_velocity(Vd):
     np.set_printoptions(precision=4, suppress=True)
 
     L = 100
+    theta4 = L
+    theta_list = [0, 0, np.pi/2,0]
 
-    omega1, omega2, omega3, = (0, 0, 1), (0, -1, 0), (0, -1, 0),
-    v1, v2, v3, = (0, -2 * L, L), (0, 0, 2 * L), (0, 0, L),
+    omega1, omega2, omega3,omega4 = (0, 0, 1), (1, 0, 0), (0, 0, 1), (0, 0, 0)
+    v1, v2, v3,v4 = (0, -L , L), (0, 0, L ), (0, 0, 0), (0, 1, 0)
 
     axis_list = [
-        (omega1 + v1), (omega2 + v2), (omega3 + v3),
+        (omega1 + v1), (omega2 + v2), (omega3 + v3), (omega4 + v4)
     ]
-    theta_list = [0, 0, 0]
 
     J = compute_jacobian(axis_list, theta_list)
     print(J)
