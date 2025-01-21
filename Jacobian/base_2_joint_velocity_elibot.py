@@ -34,7 +34,7 @@ def compute_jacobian(axis_list, theta_list, ):
     return np.array(J_list)
 
 
-def calculate_joint_velocity(Vd, theta1, theta2, theta3, theta4, theta5, theta6):
+def calculate_joint_velocity(Vs, theta1, theta2, theta3, theta4, theta5, theta6):
     """
     计算关节速度。
     参数:
@@ -58,17 +58,17 @@ def calculate_joint_velocity(Vd, theta1, theta2, theta3, theta4, theta5, theta6)
 
     # 计算关节速度
     J = np.array(J, dtype=np.float64)  # Convert J to a numeric array if it's not
-    Vd = np.array(Vd, dtype=np.float64)  # Ensure Vd is also a numeric array
+    Vs = np.array(Vs, dtype=np.float64)  # Ensure Vd is also a numeric array
 
-    theta_dot = np.linalg.inv(J) @ Vd
+    theta_dot = np.linalg.inv(J) @ Vs
     return theta_dot
 
 
 if __name__ == '__main__':
     # 示例调用
-    Vd = [10, 10, 10, 0, 0, 0]
+    Vs = [10, 10, 10, 0, 0, 0]
     theta1, theta2, theta3, theta4, theta5, theta6 = np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2
 
-    theta_dot = calculate_joint_velocity(Vd, theta1, theta2, theta3, theta4, theta5, theta6)
+    theta_dot = calculate_joint_velocity(Vs, theta1, theta2, theta3, theta4, theta5, theta6)
     print("关节速度：")
     print(theta_dot)
