@@ -66,7 +66,7 @@ def calculate_joint_velocity(Vs, theta):
 
 def main():
     # 示例调用
-    Vs = [10, 10, 10, 0, 0, 0]
+    Vs = [10, 0, 0, 0, 0, 0]
     theta1, theta2, theta3, theta4, theta5, theta6 = np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2, np.pi / 2
     theta = [theta1, theta2, theta3, theta4, theta5, theta6]
     theta_dot = calculate_joint_velocity(Vs, theta)
