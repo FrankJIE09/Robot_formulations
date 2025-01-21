@@ -47,7 +47,7 @@ def calculate_joint_velocity(Vs, theta):
     # 常量定义
     theta1, theta2, theta3, theta4, theta5, theta6 = theta
     d1, d2, d3, d4, d5, d6, d7, d8 = 186.756, 184.549, 615.605, 126.951, 573.731, 116.549, 116.52, 102.156
-    omega1, omega2, omega3, omega4, omega5, omega6 = [0, 0, -1], [0, 1, 0], [0, 1, 0], [0, 1, 0], [0, 0, -1], [0, -1,
+    omega1, omega2, omega3, omega4, omega5, omega6 = [0, 0, 1], [0, 1, 0], [0, 1, 0], [0, 1, 0], [0, 0, -1], [0, -1,
                                                                                                                0]
     v1, v2, v3, v4, v5, v6 = [0, 0, 0], [-d1, 0, 0], [-d1, 0, d3], [-d1, 0, d3 + d5], [-d2 + d4 - d6, d3 + d5, 0], [
         d1 - d7, 0, -d3 - d5]

@@ -59,7 +59,7 @@ def calculate_joint_velocity(Vd, theta):
     theta1, theta2, theta3, theta4, theta5, theta6 = theta
     d1, d2, d3, d4, d5, d6, d7, d8 = 186.756, 184.549, 615.605, 126.951, 573.731, 116.549, 116.52, 102.156
     theta = np.pi / 2  # 所有角度为90度
-    omega1, omega2, omega3, omega4, omega5, omega6 = [0, -1, 0], [0, 0, -1], [0, 0, -1], [0, 0, -1], [0, -1, 0], [0, 0,
+    omega1, omega2, omega3, omega4, omega5, omega6 = [0, 1, 0], [0, 0, -1], [0, 0, -1], [0, 0, -1], [0, -1, 0], [0, 0,
                                                                                                                   1]
     v1, v2, v3, v4, v5, v6 = [-d8 + d6 - d4 + d2, 0, d5 + d3], [-d7, -d5 - d3, 0], [-d7, -d5, 0], [-d7, 0, 0], [-d8, 0,
                                                                                                                 0], [0,
